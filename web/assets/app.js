@@ -32,7 +32,7 @@ const KEY_ALIASES = {
   rule_candidate:["rule_candidate","規則候選"], my_edit:["my_edit","我的修正"], my_observation:["my_observation","我的觀察"], tags:["tags","tag","標籤"], note:["note","備註"]
 };
 
-function wireCopyButtons(){document.querySelectorAll("[data-copy]").forEach((btn)=>{btn.addEventListener("click",async()=>{const text=btn.getAttribute("data-copy")||"";try{await navigator.clipboard.writeText(text);const old=btn.textContent;btn.textContent="已複製";setTimeout(()=>btn.textContent=old,1200);}catch{alert("複製失敗，請手動複製。");}});});}
+function wireCopyButtons(){document.querySelectorAll("[data-copy]").forEach((btn)=>{if(btn.dataset.wired)return;btn.dataset.wired="true";btn.addEventListener("click",async()=>{const text=btn.getAttribute("data-copy")||"";try{await navigator.clipboard.writeText(text);const old=btn.textContent;btn.textContent="已複製";setTimeout(()=>btn.textContent=old,1200);}catch{alert("複製失敗，請手動複製。");}});});}
 function escapeAttr(text){return text.replaceAll("&","&amp;").replaceAll("\"","&quot;").replaceAll("<","&lt;").replaceAll(">","&gt;");}
 function renderPromptCards(){const root=document.getElementById("prompt-grid");if(!root)return;root.innerHTML=PROMPTS.map((item)=>`<article class="card"><span class="badge">${item.category}</span><h3>${item.title}</h3><p>${item.desc}</p><pre>${item.prompt}</pre><button class="btn" data-copy="${escapeAttr(item.prompt)}">複製 Prompt</button></article>`).join("");wireCopyButtons();}
 
@@ -332,6 +332,7 @@ function setupListPage(){
 renderPromptCards();
 setupInputPage();
 setupListPage();
+wireCopyButtons();
 
 
 
