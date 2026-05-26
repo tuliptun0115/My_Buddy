@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>My Buddy 養成 - 守則與提示遊樂場</title>
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="topbar">
+      <div class="brand">
+        <h1 style="display: flex; align-items: center; gap: 8px;">
+          <img src="./assets/icon.svg" alt="logo" style="width: 28px; height: 28px;" />
+          My Buddy 養成
+        </h1>
+        <p>守則與提示遊樂場</p>
+      </div>
+      <nav class="nav">
+        <a class="active" href="./index.html">守則與提示遊樂場</a>
+        <a href="./logs.html">貼上紀錄</a>
+        <a href="./list.html">紀錄清單</a>
+      </nav>
+    </header>
+
+    <section>
+      <h2 class="section-title">首頁核心概念</h2>
+      <div class="card">
+        <p>My Buddy養成 的目的不是記錄所有聊天，而是在你真正透露偏好的瞬間，把它留下來。</p>
+        <p>你不需要每次都記錄，真正有價值的 pattern 會反覆出現。My Buddy養成 要建立的不是寫日記習慣，而是「觸發感知」：辨識哪一刻出現了你的 decision fingerprint。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">什麼時候該萃取？</h2>
+      <div class="card">
+        <p>當你出現以下感覺時，就值得記錄：</p>
+        <p>「對！這就是我要的」／「這句很像我」／「這樣順很多」／「不是這個意思」／「太官腔了」／「這不是我會講的話」／「這個結構舒服很多」／「我為什麼一直在改這種東西？」</p>
+        <p>這些瞬間代表你的偏好、工作模式、資訊理解方式與 decision pattern 正在浮現。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">什麼時候該記錄？</h2>
+      <p class="section-sub">七種最值得萃取的瞬間，直接複製對應 Prompt 去問 AI，並要求 AI 依固定規格輸出。</p>
+      <div id="prompt-grid" class="grid"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">使用原則</h2>
+      <div class="card">
+        <p>不要每次都紀錄，不要追求完整人格分析，也不要想一次定義自己。</p>
+        <p>真正有價值的 pattern 會重複出現。一天 1-3 次紀錄就很多了。</p>
+        <p>My Buddy養成 的目標不是建立人格資料庫，而是逐漸讓 AI 更理解你的工作方式、偏好與真正意圖。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">頁面目的與分類</h2>
+      <div class="card">
+        <p>目的：提醒你在什麼情境下可以複製哪些 Prompt 去問 AI，降低「想不起來怎麼問、不知道何時該記錄、不知道如何萃取偏好」的摩擦。</p>
+        <p>Prompt 分類：AI 回得很好、我修正 AI、我發現自己的偏好、定期 Review、更新個人規範書。</p>
+        <p>功能：每個 Prompt 都有 Copy 按鈕與一鍵複製；收藏 Prompt 為 Optional（MVP 先不做）。</p>
+      </div>
+    </section>
+  <script>
+    window.BUDDY_API_BASE = "https://script.google.com/macros/s/YOUR_APPS_SCRIPT_API_ID/exec";
+  </script>
+  <script src="./assets/app.js"></script>
+</body>
+</html>

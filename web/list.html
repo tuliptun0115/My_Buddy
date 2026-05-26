@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>My Buddy 養成 - 紀錄清單</title>
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="topbar">
+      <div class="brand">
+        <h1 style="display: flex; align-items: center; gap: 8px;">
+          <img src="./assets/icon.svg" alt="logo" style="width: 28px; height: 28px;" />
+          My Buddy 養成
+        </h1>
+        <p>反思紀錄清單</p>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">守則與提示遊樂場</a>
+        <a href="./logs.html">貼上紀錄</a>
+        <a class="active" href="./list.html">紀錄清單</a>
+      </nav>
+    </header>
+
+    <section class="panel">
+      <h2 class="section-title">
+        反思紀錄清單
+        <span id="total-count-badge" class="badge" style="margin-left: 8px; font-size: 14px; vertical-align: middle; margin-bottom: 0;">載入中...</span>
+      </h2>
+      <p class="section-sub">目前使用假資料。每頁 10 筆，支援搜尋與 tag 篩選。</p>
+      <div class="filters">
+        <input id="filter-q" placeholder="搜尋關鍵字" />
+        <select id="filter-tag"></select>
+      </div>
+      <div id="log-list"></div>
+      <div class="pager">
+        <button id="prev-page" class="btn" type="button">上一頁</button>
+        <span id="page-info" class="meta"></span>
+        <button id="next-page" class="btn" type="button">下一頁</button>
+      </div>
+    </section>
+  <script>
+    window.BUDDY_API_BASE = "https://script.google.com/macros/s/YOUR_APPS_SCRIPT_API_ID/exec";
+  </script>
+  <script src="./assets/app.js"></script>
+</body>
+</html>

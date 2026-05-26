@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>My Buddy 養成 - 貼上紀錄</title>
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="topbar">
+      <div class="brand">
+        <h1 style="display: flex; align-items: center; gap: 8px;">
+          <img src="./assets/icon.svg" alt="logo" style="width: 28px; height: 28px;" />
+          My Buddy 養成
+        </h1>
+        <p>貼上與反思紀錄</p>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">守則與提示遊樂場</a>
+        <a class="active" href="./logs.html">貼上紀錄</a>
+        <a href="./list.html">紀錄清單</a>
+      </nav>
+    </header>
+
+    <section class="panel">
+      <h2 class="section-title">貼上 AI 產出規格</h2>
+      <p class="section-sub">把首頁 Prompt 產生的格式整段貼上，系統會自動拆欄位。對不到欄位的內容會進「備註」。</p>
+      <form id="log-form">
+        <label for="log-blob">大輸入框</label>
+        <textarea id="log-blob" name="log_blob" class="big-input" placeholder="可貼 JSON 或 Key: Value 多行內容" required></textarea>
+        <button class="btn" type="submit">解析並儲存</button>
+      </form>
+      <div style="margin-top:12px;">
+        <button id="btn-t03-verify" class="btn" type="button">T03 一鍵驗證（真寫入）</button>
+      </div>
+      <p id="save-status" class="meta" aria-live="polite"></p>
+    </section>
+  </main>
+  <script>
+    // 請將以下網址替換為你實際部署的 Apps Script Web App URL (記得加上 ?action=logs)
+    window.BUDDY_API_BASE = "https://script.google.com/macros/s/YOUR_APPS_SCRIPT_API_ID/exec";
+  </script>
+  <script src="./assets/app.js"></script>
+</body>
+</html>
